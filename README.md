@@ -1,7 +1,7 @@
 logdriver
 =========
 
-!(https://raw.github.com/cainus/logdriver/master/waltz.jpg)
+![Log Driver](https://raw.github.com/cainus/logdriver/master/waltz.jpg)
 
 Logdriver is a node.js logger that only logs to stdout.
 
