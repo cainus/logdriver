@@ -1,11 +1,8 @@
-logdriver
+![Log Driver](https://raw.github.com/cainus/logdriver/master/logo.png)
 =========
-
-![Log Driver](https://raw.github.com/cainus/logdriver/master/waltz.jpg)
-
 Logdriver is a node.js logger that only logs to stdout.
 
-####You're going to want to log the output of stdout and stderr anyway, so you might as well put all your logging through std-out.  Logging libraries that don't write to stdout or stderr are missing absolutely critical output like the stack trace if/when your app dies.  
+####You're going to want to log the output of stdout and stderr anyway, so you might as well put all your logging through stdout.  Logging libraries that don't write to stdout or stderr are missing absolutely critical output like the stack trace if/when your app dies.  
 
 ##There are some other nice advantages:
 * When working on your app locally, logs just show up in stdout just like if you'd used console.log().  That's a heck of a lot simpler than tailing a log file.
@@ -29,3 +26,5 @@ node yourapp.js 2>&1 | logger
 
 ##Usage:
 Coming soon
+
+![Log Driver](https://raw.github.com/cainus/logdriver/master/waltz.jpg)
