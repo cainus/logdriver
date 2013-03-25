@@ -1,5 +1,9 @@
 ![Log Driver](https://raw.github.com/cainus/logdriver/master/logo.png)
 =========
+[![Build
+Status](https://travis-ci.org/cainus/logdriver.png?branch=master)](https://travis-ci.org/cainus/logdriver)
+[![Coverage Status](https://coveralls.io/repos/cainus/logdriver/badge.png?branch=master)](https://coveralls.io/r/cainus/logdriver)
+
 Logdriver is a node.js logger that only logs to stdout.
 
 ####You're going to want to log the output of stdout and stderr anyway, so you might as well put all your logging through stdout.  Logging libraries that don't write to stdout or stderr are missing absolutely critical output like the stack trace if/when your app dies.  
