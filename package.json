@@ -19,6 +19,8 @@
       "dependencies": {
       },
       "devDependencies" : {
+          "jscoverage" : "0.3.6",
+          "coveralls": "1.1.0",
           "mocha" : "1.8.1",
           "should" : "1.1.0"
       },
