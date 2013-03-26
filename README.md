@@ -29,6 +29,57 @@ node yourapp.js 2>&1 | logger
 ```
 
 ##Usage:
-Coming soon
+Getting the default logger:
+```javascript
+var logger = require('log-driver').logger;
+```
+
+This logger has levels 'error', 'warn', 'info', 'debug', and 'trace'.
+If you don't like those levels, change the default:
+
+```javascript
+var logger = require('log-driver')({
+  levels : ['superimportant', 'checkthisout', 'whocares' ]
+})
+logger.whocares("brangelina in lover's quarrel!");
+```
+
+Specifying what log level to log at to make logs less chatty:
+```javascript
+var logger = require('log-driver')({ level : "info" });
+logger.info("info test"); 
+logger.warn("warn test"); 
+logger.error("error test"); 
+logger.trace("trace test"); 
+```
+output:
+```console
+[info] "2013-03-26T18:30:14.570Z"  'info test'
+[warn] "2013-03-26T18:30:14.573Z"  'warn test'
+[error] "2013-03-26T18:30:14.574Z"  'error test'
+```
+(notice the trace() call was omitted because it's less than the info
+level.
+
+Using the same logger everywhere:
+The last logger you created is always available this way:
+```javascript
+var logger = require('log-driver').logger;
+```
+This way, if you use only one logger in your application (like most
+applications), you can just configure it once, and get it this way
+everywhere else.
+
+Don't like the logging format?  Just change it by passing a new
+formatting function like so:
+```javascript
+var logger = require('log-driver')({ 
+  format : function(){
+    // let's do pure JSON:
+    return JSON.stringify(arguments);
+  }
+});
+```
+
 
 ![Log Driver](https://raw.github.com/cainus/logdriver/master/waltz.jpg)
