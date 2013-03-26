@@ -6,7 +6,7 @@ lib-cov:
 	jscoverage lib lib-cov
 
 test-cov:	lib-cov
-	@LOGDRIVER_COVERAGE=1 $(MAKE) test REPORTER=html-cov > coverage.html
+	@LOGDRIVER_COVERAGE=1 $(MAKE) test REPORTER=html-cov 1> coverage.html
 	rm -rf lib-cov
 
 test-coveralls:	lib-cov

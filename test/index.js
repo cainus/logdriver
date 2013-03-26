@@ -1,22 +1,29 @@
 var should = require('should');
-var logger = require('../lib/index');
-var defaultLogger = require('../lib/index').logger;
+var logger = require('../index');
+var defaultLogger = require('../index').logger;
 var sinon = require('sinon-restore');
 var logged = "";
+var oldConsoleLog = console.log;
 
-/* NOTE: conole.log is mocked in these tests, so any uses of it will be
+/* NOTE: console.log is mocked in these tests, so any uses of it will be
  * appended to the variabled "logged".  This will include any calls you
  * make to console.log() for the purpose of debugging in these tests.
+ *
+ * use oldConsoleLog() instead if you need to console.log() for
+ * debugging;
  */
 
 
 describe("logdriver", function(){
   beforeEach(function(){
     logged = "";
-    sinon.stub(console, 'log', function(str){logged += str + "\n";});
+    sinon.stub(console, 'log', function(str){
+      logged += str + "\n";
+    });
   });
   afterEach(function(){
     sinon.restoreAll();
+    console.log = oldConsoleLog;
     logged = "";
   });
   it ("provides a default instance of logger with default levels", function(){
@@ -58,5 +65,4 @@ describe("logdriver", function(){
     mylogger.error("here's an error");
     JSON.parse(logged).should.eql({"0":"error","1":"here's an error"});
   });
-
 });
