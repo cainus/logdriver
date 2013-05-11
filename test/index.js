@@ -43,6 +43,14 @@ describe("logdriver", function(){
     should.exist(mylogger.superimportant);
   });
   it ("allows log level to be specified, and doesn't log below that level", function(){
+    var mylogger = logger({ level : false});
+    mylogger.info("info test"); 
+    mylogger.warn("warn test"); 
+    mylogger.error("error test"); 
+    mylogger.trace("trace test"); 
+    logged.should.equal('');
+  });
+  it ("allows you to specify a log level of false to suppress all output", function(){
     var mylogger = logger({ level : 'info'});
     mylogger.info("info test"); 
     mylogger.warn("warn test"); 
@@ -55,7 +63,10 @@ describe("logdriver", function(){
     lines[0].should.include('info test');
     lines[1].should.include('warn test');
     lines[2].should.include('error test');
+
   });
+
+
   it ("allows you to override the default format", function(){
     var mylogger = logger({
       format : function(){

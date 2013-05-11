@@ -3,6 +3,7 @@
 [![Build
 Status](https://travis-ci.org/cainus/logdriver.png?branch=master)](https://travis-ci.org/cainus/logdriver)
 [![Coverage Status](https://coveralls.io/repos/cainus/logdriver/badge.png?branch=master)](https://coveralls.io/r/cainus/logdriver)
+[![NPM version](https://badge.fury.io/js/logdriver.png)](http://badge.fury.io/js/logdriver)
 
 Logdriver is a node.js logger that only logs to stdout.
 
@@ -60,6 +61,12 @@ output:
 ```
 (notice the trace() call was omitted because it's less than the info
 level.
+
+Turning off all log output (sometimes nice for automated tests to keep
+output clean):
+```javascript
+var logger = require('log-driver')({ level : false });
+```
 
 Using the same logger everywhere:
 The last logger you created is always available this way:
