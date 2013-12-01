@@ -2,9 +2,13 @@
       "name": "log-driver",
       "description" : "log-driver is a simple logging framework for logging to stdout",
       "keywords" : ["logging", "logger", "log"],
-      "version": "1.2.1",
+      "version": "1.2.2",
       "bugs": {
        "url": "https://github.com/cainus/logdriver/issues"
+      },
+      "repository" : {
+          "type": "git", 
+            "url": "git://github.com/cainus/logdriver.git"
       },
       "scripts" : {
         "test" : "make test-coveralls"
