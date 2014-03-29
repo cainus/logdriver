@@ -2,7 +2,7 @@
       "name": "log-driver",
       "description" : "log-driver is a simple logging framework for logging to stdout",
       "keywords" : ["logging", "logger", "log"],
-      "version": "1.2.2",
+      "version": "1.2.4",
       "bugs": {
        "url": "https://github.com/cainus/logdriver/issues"
       },
@@ -23,14 +23,14 @@
       "dependencies": {
       },
       "devDependencies" : {
-          "jscoverage" : "0.3.6",
-          "sinon-restore" : "1.0.0",
-          "coveralls": "1.1.0",
-          "mocha" : "1.8.1",
-          "should" : "1.1.0"
+          "jscoverage" : "~0.3.8",
+          "sinon-restore" : "~1.0.0",
+          "coveralls": "~1.9.0",
+          "mocha" : "~1.18.0",
+          "should" : "~1.9.0"
       },
       "engines" : {
-                   "node" : ">=0.8.6",
-                   "npm" : "1.1.65"
+                   "node" : ">=0.8.0",
+                   "npm" : "~1.1.0"
                   }
 }
