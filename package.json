@@ -6,12 +6,12 @@
       "bugs": {
        "url": "https://github.com/cainus/logdriver/issues"
       },
-      "repository" : {
+      "repository": {
           "type": "git", 
             "url": "git://github.com/cainus/logdriver.git"
       },
-      "scripts" : {
-        "test" : "make test-coveralls"
+      "scripts": {
+        "test": "make test-coveralls"
       },
       "maintainers": [
         {
@@ -22,15 +22,15 @@
       ],
       "dependencies": {
       },
-      "devDependencies" : {
-          "jscoverage" : "~0.3.8",
-          "sinon-restore" : "~1.0.0",
+      "devDependencies": {
+          "jscoverage": "~0.3.8",
+          "sinon-restore": "~1.0.0",
           "coveralls": "~1.9.0",
-          "mocha" : "~1.18.0",
-          "should" : "~1.9.0"
+          "mocha": "~1.18.0",
+          "should": "~1.9.0"
       },
-      "engines" : {
-                   "node" : ">=0.8.0",
-                   "npm" : ">=1.1.0"
-                  }
+      "engines": {
+          "node": ">=0.8.0",
+          "npm": ">=1.1.0"
+      }
 }
