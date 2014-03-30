@@ -2,16 +2,19 @@ REPORTER = spec
 test:
 	@NODE_ENV=test ./node_modules/.bin/mocha -b --reporter $(REPORTER)
 
-lib-cov:
-	jscoverage lib lib-cov
+lint:
+	./node_modules/.bin/jshint ./test ./index.js
 
-test-cov:	lib-cov
-	@LOGDRIVER_COVERAGE=1 $(MAKE) test REPORTER=html-cov 1> coverage.html
-	rm -rf lib-cov
+test-cov:
+	$(MAKE) lint
+	@NODE_ENV=test ./node_modules/.bin/istanbul cover \
+	./node_modules/mocha/bin/_mocha -- -R spec
 
-test-coveralls:	lib-cov
+test-coveralls:
 	echo TRAVIS_JOB_ID $(TRAVIS_JOB_ID)
-	@LOGDRIVER_COVERAGE=1 $(MAKE) test REPORTER=json-cov 2> /dev/null | ./node_modules/coveralls/bin/coveralls.js
-	rm -rf lib-cov
+	$(MAKE) test
+	@NODE_ENV=test ./node_modules/.bin/istanbul cover \
+	./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && \
+		cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js || true
 
 .PHONY: test
