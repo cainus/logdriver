@@ -6,7 +6,7 @@
     "logger",
     "log"
   ],
-  "version": "1.2.3",
+  "version": "1.2.4",
   "bugs": {
     "url": "https://github.com/cainus/logdriver/issues"
   },
@@ -30,7 +30,7 @@
     "jshint": "2.4.4",
     "istanbul": "0.2.6",
     "coveralls": "2.10.0",
-    "sinon-restore": "1.0.0",
+    "sinon-restore": "1.0.1",
     "mocha": "1.8.1",
     "should": "1.1.0"
   },
