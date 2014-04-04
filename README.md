@@ -1,9 +1,6 @@
-![Log Driver](https://raw.github.com/cainus/logdriver/master/logo.png)
+![Log Driver][logdriver-logo]
 =========
-[![Build
-Status](https://travis-ci.org/cainus/logdriver.png?branch=master)](https://travis-ci.org/cainus/logdriver)
-[![Coverage Status](https://coveralls.io/repos/cainus/logdriver/badge.png?branch=master)](https://coveralls.io/r/cainus/logdriver)
-[![NPM version](https://badge.fury.io/js/logdriver.png)](http://badge.fury.io/js/logdriver)
+[![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![NPM Version][npm-image]][npm-url]
 
 Logdriver is a node.js logger that only logs to stdout.
 
@@ -40,14 +37,14 @@ If you don't like those levels, change the default:
 
 ```javascript
 var logger = require('log-driver')({
-  levels : ['superimportant', 'checkthisout', 'whocares' ]
-})
+  levels: ['superimportant', 'checkthisout', 'whocares' ]
+});
 logger.whocares("brangelina in lover's quarrel!");
 ```
 
 Specifying what log level to log at to make logs less chatty:
 ```javascript
-var logger = require('log-driver')({ level : "info" });
+var logger = require('log-driver')({ level: "info" });
 logger.info("info test"); 
 logger.warn("warn test"); 
 logger.error("error test"); 
@@ -65,7 +62,7 @@ level.
 Turning off all log output (sometimes nice for automated tests to keep
 output clean):
 ```javascript
-var logger = require('log-driver')({ level : false });
+var logger = require('log-driver')({ level: false });
 ```
 
 Using the same logger everywhere:
@@ -81,12 +78,22 @@ Don't like the logging format?  Just change it by passing a new
 formatting function like so:
 ```javascript
 var logger = require('log-driver')({ 
-  format : function(){
+  format: function() {
     // let's do pure JSON:
     return JSON.stringify(arguments);
   }
 });
 ```
 
-
 ![Log Driver](https://raw.github.com/cainus/logdriver/master/waltz.jpg)
+
+[logdriver-logo]: https://raw.github.com/cainus/logdriver/master/logo.png
+
+[travis-image]: https://travis-ci.org/cainus/logdriver.png?branch=master
+[travis-url]: https://travis-ci.org/cainus/logdriver
+
+[coveralls-image]: https://coveralls.io/repos/cainus/logdriver/badge.png?branch=master
+[coveralls-url]: https://coveralls.io/repos/cainus/logdriver
+
+[npm-image]: https://badge.fury.io/js/log-driver.png
+[npm-url]: https://badge.fury.io/js/log-driver
