@@ -1,6 +1,6 @@
 var util = require('util');
 
-LogDriver = function(options){
+var LogDriver = function(options){
   options = options || {};
   var logger = this;
   if (options.format){
@@ -49,7 +49,7 @@ LogDriver.prototype.format = function(){
 
 var defaultLogger = null;
 
-factory = function(options){
+var factory = function(options){
   defaultLogger = new LogDriver(options);
   factory.logger = defaultLogger;
   return defaultLogger;
