@@ -1,6 +1,6 @@
 ![Log Driver][logdriver-logo]
 =========
-[![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![NPM Version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url] [![NPM Version][npm-image]][npm-url] [![codecov.io](https://codecov.io/github/cainus/logdriver/coverage.svg?branch=master)](https://codecov.io/github/cainus/logdriver?branch=master)
 
 Logdriver is a node.js logger that only logs to stdout.
 
