@@ -15,7 +15,7 @@
     "url": "git://github.com/cainus/logdriver.git"
   },
   "scripts": {
-    "test": "make test-coveralls"
+    "test": "make test-codecov"
   },
   "maintainers": [
     {
