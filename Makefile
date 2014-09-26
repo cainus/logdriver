@@ -10,11 +10,11 @@ test-cov:
 	@NODE_ENV=test ./node_modules/.bin/istanbul cover \
 	./node_modules/mocha/bin/_mocha -- -R spec --check-leaks
 
-test-coveralls:
+test-codecov:
 	echo TRAVIS_JOB_ID $(TRAVIS_JOB_ID)
 	$(MAKE) test
 	@NODE_ENV=test ./node_modules/.bin/istanbul cover \
 	./node_modules/mocha/bin/_mocha --check-leaks --report lcovonly -- -R spec && \
-		cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js || true
+	cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
 
 .PHONY: test
