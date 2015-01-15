@@ -6,7 +6,7 @@
     "logger",
     "log"
   ],
-  "version": "1.2.5",
+  "version": "1.2.6",
   "bugs": {
     "url": "https://github.com/cainus/logdriver/issues"
   },
@@ -18,11 +18,7 @@
     "test": "make test-codecov"
   },
   "maintainers": [
-    {
-      "name": "Gregg Caines",
-      "email": "gregg@caines.ca",
-      "web": "http://caines.ca"
-    }
+    "Gregg Caines <gregg@caines.ca> (http://caines.ca)"
   ],
   "dependencies": {
     "codecov.io": "0.0.1"
@@ -37,5 +33,12 @@
   },
   "engines": {
     "node": ">=0.8.6"
-  }
+  },
+  "homepage": "https://github.com/cainus/logdriver",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "author": "Gregg Caines",
+  "license": "ISC"
 }
