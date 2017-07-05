@@ -22,12 +22,21 @@ var LogDriver = function(options){
       logger[level] = function(){
         var args = Array.prototype.slice.call(arguments);
         args.unshift(level);  // log level is added as the first parameter
-        console.log(logger.format.apply(logger, args));
+        var write = getWriter(level, options.errorLevel, logger.levels);
+        write(logger.format.apply(logger, args));
       };
     } else {
       logger[level] = function(){/* no-op, because this log level is ignored */};
     }
   });
+};
+
+var getWriter = function(logLevel, errorLevel, levels){
+  // Note: If 'levels' does not contain 'errorLevel', then 'console.log'
+  //       is used.
+  return errorLevel &&
+    (levels.indexOf(logLevel) <= levels.indexOf(errorLevel)) ?
+      console.error : console.log;
 };
 
 var logLevelShouldOutput = function(logLevel, configuredLevel, levels){
