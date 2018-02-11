@@ -20,10 +20,8 @@
   "maintainers": [
     "Gregg Caines <gregg@caines.ca> (http://caines.ca)"
   ],
-  "dependencies": {
-    "codecov.io": "0.0.1"
-  },
   "devDependencies": {
+    "codecov.io": "0.0.1",
     "jshint": "2.4.4",
     "istanbul": "0.2.6",
     "coveralls": "2.10.0",
