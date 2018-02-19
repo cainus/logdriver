@@ -57,13 +57,12 @@ describe("logdriver", function(){
     mylogger.error("error test"); 
     mylogger.trace("trace test"); 
     var lines = logged.split("\n");
-    lines[0].should.include('[info]');
-    lines[1].should.include('[warn]');
-    lines[2].should.include('[error]');
-    lines[0].should.include('info test');
-    lines[1].should.include('warn test');
-    lines[2].should.include('error test');
-
+    should.ok(lines[0].includes('[info]'));
+    should.ok(lines[1].includes('[warn]'));
+    should.ok(lines[2].includes('[error]'));
+    should.ok(lines[0].includes('info test'));
+    should.ok(lines[1].includes('warn test'));
+    should.ok(lines[2].includes('error test'));
   });
 
 
