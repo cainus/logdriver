@@ -19,11 +19,11 @@ var LogDriver = function(options){
   }
   this.levels.forEach(function(level){
     if (logLevelShouldOutput(level, logger.level, logger.levels)){
-      logger[level] = function(){
+      logger[level] = (function(){
         var args = Array.prototype.slice.call(arguments);
         args.unshift(level);  // log level is added as the first parameter
-        console.log(logger.format.apply(logger, args));
-      };
+        return Function.prototype.bind.call(console.log, console, logger.format.apply(logger, args));
+      })();
     } else {
       logger[level] = function(){/* no-op, because this log level is ignored */};
     }
